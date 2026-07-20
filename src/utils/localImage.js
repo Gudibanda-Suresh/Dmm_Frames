@@ -1,10 +1,11 @@
-// Given a Vite import.meta.glob() result (path -> url), finds the entry
-// whose filename (without extension) matches `name`, e.g. name="main"
-// matches ".../main.jpg", ".../main.png", etc. Falls back if not found.
-export function pickLocalImage(modules, name, fallback) {
-  const key = Object.keys(modules).find((path) => {
-    const filename = path.split('/').pop() ?? ''
-    return filename.replace(/\.[^.]+$/, '').toLowerCase() === name.toLowerCase()
-  })
-  return key ? modules[key] : fallback
+// Given a Vite import.meta.glob() result (path -> url), returns the Nth
+// image found in that folder (alphabetically), regardless of filename.
+// Falls back if there aren't enough images.
+export function pickNthLocalImage(modules, index, fallback) {
+  const keys = Object.keys(modules).sort()
+  return keys[index] ? modules[keys[index]] : fallback
+}
+
+export function pickFirstLocalImage(modules, fallback) {
+  return pickNthLocalImage(modules, 0, fallback)
 }
