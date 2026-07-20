@@ -1,0 +1,95 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "gallery": "Gallery",
+    "reels": "Reels",
+    "contact": "Contact",
+    "cta": "Book a Shoot"
+  },
+  "hero": {
+    "eyebrow": "Silk City Photography",
+    "title1": "Timeless Frames,",
+    "title2": "Cinematic Stories",
+    "subtitle": "We are dmm_frames — photographers from Dharmavaram, the Silk City of Andhra Pradesh, crafting cinematic visuals and authentic stories.",
+    "ctaPrimary": "View Gallery",
+    "ctaSecondary": "Book a Shoot",
+    "scroll": "Scroll"
+  },
+  "about": {
+    "eyebrow": "About Us",
+    "title": "Rooted in Silk, Framed in Light",
+    "body1": "We are photographers and filmmakers based in Dharmavaram, Andhra Pradesh — proudly known as the Silk City. Our lens captures the rhythm of a place woven from tradition, craftsmanship, and everyday grace.",
+    "body2": "From candid portraits to cinematic reels, every frame we create is inspired by our culture, our landscapes, and the people who call this Silk City home.",
+    "stat1Label": "Shoots Delivered",
+    "stat2Label": "Years Behind the Lens",
+    "stat3Label": "Happy Clients",
+    "stat4Label": "Home City"
+  },
+  "services": {
+    "eyebrow": "What We Do",
+    "title": "Services",
+    "subtitle": "Crafted visuals for every story worth telling.",
+    "items": [
+      {
+        "title": "Cinematic Shorts & Reels",
+        "desc": "Story-driven short films and reels edited with a cinematic touch."
+      },
+      {
+        "title": "Portrait & Lifestyle Photography",
+        "desc": "Natural, emotive portraits that capture real moments and real people."
+      },
+      {
+        "title": "Silk City Visual Stories",
+        "desc": "Editorial visuals inspired by the weaves, colors and traditions of Dharmavaram."
+      },
+      {
+        "title": "Professional Photography & Videography",
+        "desc": "Shot on the Canon EOS R50 for crisp, premium quality every time."
+      }
+    ]
+  },
+  "gallery": {
+    "eyebrow": "Portfolio",
+    "title": "Gallery",
+    "subtitle": "A curated look into moments we've framed.",
+    "categories": {
+      "all": "All",
+      "portraits": "Portraits",
+      "nature": "Nature",
+      "travel": "Travel",
+      "street": "Street",
+      "culture": "Culture",
+      "lifestyle": "Lifestyle"
+    }
+  },
+  "reels": {
+    "eyebrow": "In Motion",
+    "title": "Reels & Videos",
+    "subtitle": "Cinematic stories told frame by frame."
+  },
+  "contact": {
+    "eyebrow": "Get in Touch",
+    "title": "Let's Create Together",
+    "subtitle": "Have a story to tell? We'd love to hear about it.",
+    "form": {
+      "name": "Your Name",
+      "email": "Your Email",
+      "message": "Tell us about your shoot",
+      "send": "Send Message",
+      "success": "Thank you! We'll get back to you soon."
+    },
+    "info": {
+      "location": "Location",
+      "locationValue": "Dharmavaram, Andhra Pradesh, India",
+      "reach": "Reach Us",
+      "mapPlaceholder": "Map coming soon"
+    }
+  },
+  "footer": {
+    "tagline": "Silk City Photography — Dharmavaram, Andhra Pradesh",
+    "rights": "All rights reserved.",
+    "madeWith": "Crafted with care in the Silk City."
+  }
+}

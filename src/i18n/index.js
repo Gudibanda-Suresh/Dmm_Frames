@@ -1,0 +1,27 @@
+import i18n from 'i18next'
+import { initReactI18next } from 'react-i18next'
+import LanguageDetector from 'i18next-browser-languagedetector'
+import en from './locales/en.json'
+import te from './locales/te.json'
+
+i18n
+  .use(LanguageDetector)
+  .use(initReactI18next)
+  .init({
+    resources: {
+      en: { translation: en },
+      te: { translation: te },
+    },
+    fallbackLng: 'en',
+    supportedLngs: ['en', 'te'],
+    interpolation: { escapeValue: false },
+    detection: {
+      // Only trust a previously-saved choice; otherwise always start on
+      // fallbackLng (English), regardless of browser/OS locale.
+      order: ['localStorage'],
+      lookupLocalStorage: 'dmm_frames_lang',
+      caches: ['localStorage'],
+    },
+  })
+
+export default i18n

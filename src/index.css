@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', 'Noto Sans Telugu', system-ui, sans-serif;
+  background-color: #07070a;
+}
+
+::selection {
+  background: rgba(224, 169, 59, 0.35);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #07070a;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #3e7cb1, #c22b45);
+  border-radius: 999px;
+}
+
+[lang='te'],
+.font-telugu {
+  font-family: 'Noto Sans Telugu', 'Inter', sans-serif;
+}
+
+@layer components {
+  .glass-panel {
+    @apply relative border border-white/10 bg-white/[0.045] backdrop-blur-xl shadow-glass shadow-glass-inset;
+  }
+
+  .glass-panel::before {
+    content: '';
+    @apply pointer-events-none absolute inset-0 rounded-[inherit];
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.09) 0%,
+      rgba(255, 255, 255, 0) 40%
+    );
+  }
+
+  .text-gradient-silk {
+    @apply bg-silk-ribbon bg-clip-text text-transparent;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-silk-ribbon px-7 py-3 text-sm font-semibold text-ink-950 shadow-glow transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98];
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-7 py-3 text-sm font-semibold text-silk-cream backdrop-blur-md transition-colors duration-300 hover:bg-white/[0.09];
+  }
+
+  .skeleton {
+    @apply relative overflow-hidden bg-ink-800;
+  }
+
+  .skeleton::after {
+    content: '';
+    @apply absolute inset-0;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.06),
+      transparent
+    );
+    background-size: 800px 100%;
+    animation: shimmer 1.6s linear infinite;
+  }
+}
