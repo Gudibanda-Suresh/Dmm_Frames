@@ -71,7 +71,7 @@ export default function Gallery() {
               <LazyImage
                 src={item.src}
                 alt={`${item.category} photography by dmm_frames`}
-                aspect={ASPECT_MAP[item.h]}
+                aspect={item.h ? ASPECT_MAP[item.h] : 'auto'}
                 className="rounded-2xl"
                 imgClassName="transition-transform duration-700 group-hover:scale-110"
               />

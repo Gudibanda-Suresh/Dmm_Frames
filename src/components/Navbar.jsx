@@ -1,6 +1,4 @@
 import { useEffect, useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
-import { Menu, X } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import LanguageSwitcher from './LanguageSwitcher'
 import logo from '../assets/logo.jpeg'
@@ -17,7 +15,6 @@ const NAV_LINKS = [
 export default function Navbar() {
   const { t } = useTranslation()
   const [scrolled, setScrolled] = useState(false)
-  const [open, setOpen] = useState(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -25,13 +22,6 @@ export default function Navbar() {
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
-
-  useEffect(() => {
-    document.body.style.overflow = open ? 'hidden' : ''
-    return () => {
-      document.body.style.overflow = ''
-    }
-  }, [open])
 
   return (
     <header
@@ -75,57 +65,11 @@ export default function Navbar() {
             </a>
           </div>
 
-          <div className="flex shrink-0 items-center gap-1.5 lg:hidden">
+          <div className="shrink-0 lg:hidden">
             <LanguageSwitcher compact />
-            <button
-              type="button"
-              onClick={() => setOpen((v) => !v)}
-              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-silk-cream"
-              aria-label="Toggle menu"
-              aria-expanded={open}
-            >
-              {open ? <X size={18} /> : <Menu size={18} />}
-            </button>
           </div>
         </div>
       </div>
-
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            initial={{ opacity: 0, y: -16 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -16 }}
-            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="mx-4 mt-2 lg:hidden"
-          >
-            <div className="glass-panel flex flex-col gap-1 rounded-2xl p-4">
-              {NAV_LINKS.map((link, i) => (
-                <motion.a
-                  key={link.key}
-                  href={link.href}
-                  onClick={() => setOpen(false)}
-                  initial={{ opacity: 0, x: -12 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.05 * i }}
-                  className="rounded-xl px-3 py-3 text-base font-medium text-white/80 transition-colors hover:bg-white/5 hover:text-silk-gold"
-                >
-                  {t(`nav.${link.key}`)}
-                </motion.a>
-              ))}
-              <div className="mt-2 border-t border-white/10 pt-4">
-                <a
-                  href="#contact"
-                  onClick={() => setOpen(false)}
-                  className="btn-primary w-full !px-5 !py-2.5 text-xs"
-                >
-                  {t('nav.cta')}
-                </a>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </header>
   )
 }

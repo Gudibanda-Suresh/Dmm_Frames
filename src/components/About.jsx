@@ -4,6 +4,16 @@ import SectionHeading from './ui/SectionHeading'
 import Reveal from './ui/Reveal'
 import GlassCard from './ui/GlassCard'
 import LazyImage from './ui/LazyImage'
+import { pickLocalImage } from '../utils/localImage'
+
+// Drop files named main.jpg (or .png/.jpeg/.webp) and accent.jpg into
+// src/assets/about/ to replace these — picked up automatically.
+const aboutModules = import.meta.glob('../assets/about/*.{jpg,jpeg,png,webp,avif,JPG,JPEG,PNG,WEBP}', {
+  eager: true,
+  import: 'default',
+})
+const aboutMain = pickLocalImage(aboutModules, 'main', 'https://picsum.photos/seed/dmm-about-main/900/1000')
+const aboutAccent = pickLocalImage(aboutModules, 'accent', 'https://picsum.photos/seed/dmm-about-accent/500/500')
 
 const STATS = [
   { key: 'stat1Label', value: '250+', icon: Camera },
@@ -22,9 +32,9 @@ export default function About() {
           <Reveal>
             <div className="relative">
               <LazyImage
-                src="https://picsum.photos/seed/dmm-about-main/900/1000"
+                src={aboutMain}
                 alt="Behind the scenes with dmm_frames"
-                aspect="aspect-[4/5]"
+                aspect="aspect-[3/2]"
                 className="rounded-[2rem] border border-white/10 shadow-glass"
               />
               <GlassCard
@@ -32,7 +42,7 @@ export default function About() {
                 className="absolute -bottom-8 -right-4 w-44 rounded-2xl p-3 sm:-right-8 sm:w-56"
               >
                 <LazyImage
-                  src="https://picsum.photos/seed/dmm-about-accent/500/500"
+                  src={aboutAccent}
                   alt="Silk weaving detail, Dharmavaram"
                   aspect="aspect-square"
                   className="rounded-xl"
