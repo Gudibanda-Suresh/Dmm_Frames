@@ -28,7 +28,7 @@ export default function Gallery() {
   )
 
   return (
-    <section id="gallery" className="relative py-24 sm:py-32">
+    <section id="gallery" className="relative scroll-mt-24 py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow={t('gallery.eyebrow')}
@@ -55,7 +55,7 @@ export default function Gallery() {
 
         <motion.div
           layout
-          className="columns-1 gap-4 sm:columns-2 lg:columns-3 [&>*]:mb-4"
+          className="columns-2 gap-3 sm:gap-4 md:columns-3 [&>*]:mb-3 sm:[&>*]:mb-4"
         >
           {filtered.map((item, i) => (
             <motion.button
