@@ -16,7 +16,7 @@ export default function Hero() {
 
   return (
     <section id="home" className="relative isolate overflow-hidden pt-24 lg:pt-28">
-      <div className="relative">
+      <div className="relative min-h-[460px] bg-ink-950 sm:min-h-[520px] lg:min-h-0">
         <img src={heroMain} alt="dmm_frames — Silk City Photography" className="h-auto w-full" />
         <div className="absolute inset-0 bg-gradient-to-t from-ink-950/90 via-ink-950/45 to-ink-950/10" />
         <div className="absolute inset-0 bg-gradient-to-r from-ink-950/65 via-ink-950/15 to-transparent" />
