@@ -18,7 +18,7 @@ export default function About() {
   const { t } = useTranslation()
 
   return (
-    <section id="about" className="relative scroll-mt-20 pt-10 pb-16 sm:pt-14 sm:pb-20">
+    <section id="about" className="relative scroll-mt-[72px] pt-6 pb-16 sm:pt-8 sm:pb-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-14 lg:grid-cols-2 lg:items-center lg:gap-16">
           <Reveal>

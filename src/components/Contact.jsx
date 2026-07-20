@@ -20,7 +20,7 @@ const SOCIALS = {
   instagram: 'https://www.instagram.com/dmm_frames?utm_source=qr&igsh=a3FzN3doejFrM3g5',
   youtube: 'https://www.youtube.com/@dmm_frames',
   whatsapp: 'https://wa.me/919000000000',
-  email: 'ssrdt06@gmail.com',
+  email: 'dmmframes@gmail.com',
 }
 
 const WEB3FORMS_ACCESS_KEY = '37559591-ed93-4cd0-9ae5-0f4b3a6723ed'
@@ -78,7 +78,7 @@ export default function Contact() {
     'w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white placeholder:text-white/35 outline-none transition-colors focus:border-silk-gold/60 focus:bg-white/[0.06]'
 
   return (
-    <section id="contact" className="relative scroll-mt-20 pt-10 pb-16 sm:pt-14 sm:pb-20">
+    <section id="contact" className="relative scroll-mt-[72px] pt-6 pb-16 sm:pt-8 sm:pb-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow={t('contact.eyebrow')}
