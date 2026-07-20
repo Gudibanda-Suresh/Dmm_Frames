@@ -45,13 +45,13 @@ export default function Navbar() {
             scrolled ? 'shadow-glass' : 'border-white/5 bg-white/[0.02] shadow-none'
           }`}
         >
-          <a href="#home" className="flex items-center gap-3">
+          <a href="#home" className="flex min-w-0 items-center gap-2 sm:gap-3">
             <img
               src={logo}
               alt="dmm_frames logo"
-              className="h-10 w-10 rounded-full border border-white/10 object-cover sm:h-11 sm:w-11"
+              className="h-9 w-9 shrink-0 rounded-full border border-white/10 object-cover sm:h-11 sm:w-11"
             />
-            <span className="font-display text-lg font-semibold tracking-wide text-silk-cream sm:text-xl">
+            <span className="truncate font-display text-base font-semibold tracking-wide text-silk-cream sm:text-lg lg:text-xl">
               dmm_frames
             </span>
           </a>
@@ -75,15 +75,18 @@ export default function Navbar() {
             </a>
           </div>
 
-          <button
-            type="button"
-            onClick={() => setOpen((v) => !v)}
-            className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-silk-cream lg:hidden"
-            aria-label="Toggle menu"
-            aria-expanded={open}
-          >
-            {open ? <X size={20} /> : <Menu size={20} />}
-          </button>
+          <div className="flex shrink-0 items-center gap-1.5 lg:hidden">
+            <LanguageSwitcher compact />
+            <button
+              type="button"
+              onClick={() => setOpen((v) => !v)}
+              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-silk-cream"
+              aria-label="Toggle menu"
+              aria-expanded={open}
+            >
+              {open ? <X size={18} /> : <Menu size={18} />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -110,12 +113,11 @@ export default function Navbar() {
                   {t(`nav.${link.key}`)}
                 </motion.a>
               ))}
-              <div className="mt-2 flex items-center justify-between gap-3 border-t border-white/10 pt-4">
-                <LanguageSwitcher />
+              <div className="mt-2 border-t border-white/10 pt-4">
                 <a
                   href="#contact"
                   onClick={() => setOpen(false)}
-                  className="btn-primary !px-5 !py-2.5 text-xs"
+                  className="btn-primary w-full !px-5 !py-2.5 text-xs"
                 >
                   {t('nav.cta')}
                 </a>
