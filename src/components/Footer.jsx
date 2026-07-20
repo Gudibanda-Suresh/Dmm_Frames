@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import { Instagram, Youtube } from 'lucide-react'
+import { Facebook, Instagram, Youtube } from 'lucide-react'
 import logo from '../assets/logo.jpeg'
 
 const NAV_LINKS = [
@@ -24,7 +24,7 @@ export default function Footer() {
               <img
                 src={logo}
                 alt="dmm_frames logo"
-                className="h-11 w-11 rounded-full border border-white/10 object-cover"
+                className="h-11 w-11 rounded-lg border border-white/10 object-cover"
               />
               <span className="font-display text-lg font-semibold text-silk-cream">
                 dmm_frames
@@ -33,22 +33,31 @@ export default function Footer() {
             <p className="mt-3 max-w-xs text-sm text-white/50">{t('footer.tagline')}</p>
             <div className="mt-5 flex gap-3">
               <a
+                href="https://www.facebook.com/profile.php?id=61591771426900"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Facebook"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/60 transition-colors hover:text-silk-gold lg:h-12 lg:w-12"
+              >
+                <Facebook className="h-4 w-4 lg:h-5 lg:w-5" />
+              </a>
+              <a
                 href="https://www.instagram.com/dmm_frames?utm_source=qr&igsh=a3FzN3doejFrM3g5"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Instagram"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/60 transition-colors hover:text-silk-gold"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/60 transition-colors hover:text-silk-gold lg:h-12 lg:w-12"
               >
-                <Instagram size={16} />
+                <Instagram className="h-4 w-4 lg:h-5 lg:w-5" />
               </a>
               <a
                 href="https://www.youtube.com/@dmm_frames"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="YouTube"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/60 transition-colors hover:text-silk-gold"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/60 transition-colors hover:text-silk-gold lg:h-12 lg:w-12"
               >
-                <Youtube size={16} />
+                <Youtube className="h-4 w-4 lg:h-5 lg:w-5" />
               </a>
             </div>
           </div>

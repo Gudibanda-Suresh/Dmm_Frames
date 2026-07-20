@@ -28,7 +28,7 @@ export default function Gallery() {
   )
 
   return (
-    <section id="gallery" className="relative scroll-mt-24 py-24 sm:py-32">
+    <section id="gallery" className="relative scroll-mt-20 pt-10 pb-16 sm:pt-14 sm:pb-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow={t('gallery.eyebrow')}

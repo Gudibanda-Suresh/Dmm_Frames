@@ -11,7 +11,7 @@ export default function Services() {
   const items = t('services.items', { returnObjects: true })
 
   return (
-    <section id="services" className="relative scroll-mt-24 py-24 sm:py-32">
+    <section id="services" className="relative scroll-mt-20 pt-10 pb-16 sm:pt-14 sm:pb-20">
       <div className="pointer-events-none absolute inset-x-0 top-1/2 -z-10 h-[400px] -translate-y-1/2 bg-radial-fade" />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading

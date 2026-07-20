@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import {
+  AlertCircle,
   CheckCircle2,
+  Facebook,
   Instagram,
   Mail,
   MapPin,
@@ -12,13 +14,16 @@ import SectionHeading from './ui/SectionHeading'
 import Reveal from './ui/Reveal'
 import GlassCard from './ui/GlassCard'
 
-// WhatsApp number and email are still placeholders — swap when available.
+// WhatsApp number is still a placeholder — swap when available.
 const SOCIALS = {
+  facebook: 'https://www.facebook.com/profile.php?id=61591771426900',
   instagram: 'https://www.instagram.com/dmm_frames?utm_source=qr&igsh=a3FzN3doejFrM3g5',
   youtube: 'https://www.youtube.com/@dmm_frames',
   whatsapp: 'https://wa.me/919000000000',
-  email: 'hello@dmmframes.com',
+  email: 'ssrdt06@gmail.com',
 }
+
+const WEB3FORMS_ACCESS_KEY = '37559591-ed93-4cd0-9ae5-0f4b3a6723ed'
 
 const MAP_EMBED_SRC =
   'https://www.google.com/maps?q=Dharmavaram,Andhra+Pradesh,India&output=embed'
@@ -36,21 +41,44 @@ export default function Contact() {
   const { t } = useTranslation()
   const [form, setForm] = useState({ name: '', email: '', message: '' })
   const [submitted, setSubmitted] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [error, setError] = useState(false)
 
   const handleChange = (e) =>
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }))
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // No backend wired up yet — replace with a real submission endpoint.
-    setSubmitted(true)
+    setSubmitting(true)
+    setError(false)
+
+    const formData = new FormData(e.target)
+    formData.append('access_key', WEB3FORMS_ACCESS_KEY)
+    formData.append('subject', `New inquiry from ${form.name} — dmm_frames`)
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData,
+      })
+      const data = await response.json()
+      if (data.success) {
+        setSubmitted(true)
+      } else {
+        setError(true)
+      }
+    } catch {
+      setError(true)
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   const inputClass =
     'w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white placeholder:text-white/35 outline-none transition-colors focus:border-silk-gold/60 focus:bg-white/[0.06]'
 
   return (
-    <section id="contact" className="relative scroll-mt-24 py-24 sm:py-32">
+    <section id="contact" className="relative scroll-mt-20 pt-10 pb-16 sm:pt-14 sm:pb-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow={t('contact.eyebrow')}
@@ -109,9 +137,19 @@ export default function Contact() {
                       placeholder={t('contact.form.message')}
                     />
                   </div>
-                  <button type="submit" className="btn-primary w-full">
+                  {error && (
+                    <div className="flex items-center gap-2 rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-300">
+                      <AlertCircle size={16} className="shrink-0" />
+                      {t('contact.form.error')}
+                    </div>
+                  )}
+                  <button
+                    type="submit"
+                    disabled={submitting}
+                    className="btn-primary w-full disabled:cursor-not-allowed disabled:opacity-60"
+                  >
                     <Send size={16} />
-                    {t('contact.form.send')}
+                    {submitting ? t('contact.form.sending') : t('contact.form.send')}
                   </button>
                 </form>
               )}
@@ -154,6 +192,15 @@ export default function Contact() {
                 </div>
 
                 <div className="mt-6 flex gap-3 border-t border-white/10 pt-6">
+                  <a
+                    href={SOCIALS.facebook}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Facebook"
+                    className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition-colors hover:border-silk-gold/50 hover:text-silk-gold"
+                  >
+                    <Facebook size={18} />
+                  </a>
                   <a
                     href={SOCIALS.instagram}
                     target="_blank"

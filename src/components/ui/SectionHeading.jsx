@@ -11,7 +11,7 @@ export default function SectionHeading({
     align === 'left' ? 'items-start text-left' : 'items-center text-center'
 
   return (
-    <div id={id} className={`flex flex-col ${alignClass} mb-14 md:mb-20`}>
+    <div id={id} className={`flex flex-col ${alignClass} mb-10 md:mb-14`}>
       <Reveal>
         <span className="mb-4 inline-block rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-silk-gold">
           {eyebrow}

@@ -79,7 +79,9 @@
       "email": "Your Email",
       "message": "Tell us about your shoot",
       "send": "Send Message",
-      "success": "Thank you! We'll get back to you soon."
+      "success": "Thank you! We'll get back to you soon.",
+      "sending": "Sending...",
+      "error": "Something went wrong. Please try again or reach us directly."
     },
     "info": {
       "location": "Location",

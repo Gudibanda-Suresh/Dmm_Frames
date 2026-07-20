@@ -1,5 +1,4 @@
 import { useTranslation } from 'react-i18next'
-import { Camera, MapPin, Sparkles, Users } from 'lucide-react'
 import SectionHeading from './ui/SectionHeading'
 import Reveal from './ui/Reveal'
 import GlassCard from './ui/GlassCard'
@@ -15,18 +14,11 @@ const aboutModules = import.meta.glob('../assets/about/*.{jpg,jpeg,png,webp,avif
 const aboutMain = pickNthLocalImage(aboutModules, 0, 'https://picsum.photos/seed/dmm-about-main/900/1000')
 const aboutAccent = pickNthLocalImage(aboutModules, 1, 'https://picsum.photos/seed/dmm-about-accent/500/500')
 
-const STATS = [
-  { key: 'stat1Label', value: '250+', icon: Camera },
-  { key: 'stat2Label', value: '5+', icon: Sparkles },
-  { key: 'stat3Label', value: '180+', icon: Users },
-  { key: 'stat4Label', value: 'Dharmavaram', icon: MapPin },
-]
-
 export default function About() {
   const { t } = useTranslation()
 
   return (
-    <section id="about" className="relative scroll-mt-24 py-24 sm:py-32">
+    <section id="about" className="relative scroll-mt-20 pt-10 pb-16 sm:pt-14 sm:pb-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-14 lg:grid-cols-2 lg:items-center lg:gap-16">
           <Reveal>
@@ -64,20 +56,6 @@ export default function About() {
               <Reveal delay={0.08}>
                 <p className="text-white/65">{t('about.body2')}</p>
               </Reveal>
-            </div>
-
-            <div className="mt-10 grid grid-cols-2 gap-4">
-              {STATS.map(({ key, value, icon: Icon }, i) => (
-                <Reveal key={key} delay={0.05 * i}>
-                  <GlassCard className="rounded-2xl p-5" hover={false}>
-                    <Icon className="mb-3 text-silk-gold" size={20} />
-                    <div className="font-display text-2xl font-semibold text-silk-cream">
-                      {value}
-                    </div>
-                    <div className="mt-1 text-xs text-white/50">{t(`about.${key}`)}</div>
-                  </GlassCard>
-                </Reveal>
-              ))}
             </div>
           </div>
         </div>

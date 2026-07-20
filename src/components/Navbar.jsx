@@ -39,7 +39,7 @@ export default function Navbar() {
             <img
               src={logo}
               alt="dmm_frames logo"
-              className="h-9 w-9 shrink-0 rounded-full border border-white/10 object-cover sm:h-11 sm:w-11"
+              className="h-9 w-9 shrink-0 rounded-lg border border-white/10 object-cover sm:h-11 sm:w-11"
             />
             <span className="truncate font-display text-base font-semibold tracking-wide text-silk-cream sm:text-lg lg:text-xl">
               dmm_frames
