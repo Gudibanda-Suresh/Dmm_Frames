@@ -11,7 +11,7 @@ export default function LanguageSwitcher({ className = '', compact = false }) {
 
   return (
     <div
-      className={`flex shrink-0 items-center gap-1 rounded-full border border-white/10 bg-white/5 p-1 ${className}`}
+      className={`flex shrink-0 items-center gap-1 rounded-full border border-fg/10 bg-fg/5 p-1 ${className}`}
       role="group"
       aria-label="Language switcher"
     >
@@ -26,7 +26,7 @@ export default function LanguageSwitcher({ className = '', compact = false }) {
           } ${
             current === code
               ? 'bg-silk-ribbon text-ink-950 shadow-glow'
-              : 'text-white/60 hover:text-white'
+              : 'text-fg/60 hover:text-fg'
           }`}
         >
           {label}

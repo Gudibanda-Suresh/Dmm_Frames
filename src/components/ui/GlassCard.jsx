@@ -10,7 +10,7 @@ export default function GlassCard({
   return (
     <Tag
       className={`glass-panel rounded-3xl ${
-        hover ? 'transition-all duration-500 hover:-translate-y-1.5 hover:border-white/20 hover:shadow-glow' : ''
+        hover ? 'transition-all duration-500 hover:-translate-y-1.5 hover:border-fg/20 hover:shadow-glow' : ''
       } ${className}`}
       {...props}
     >

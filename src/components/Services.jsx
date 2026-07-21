@@ -26,13 +26,15 @@ export default function Services() {
             return (
               <Reveal key={item.title} delay={0.08 * i}>
                 <GlassCard className="group h-full rounded-3xl p-7">
-                  <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-silk-ribbon shadow-glow transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3">
-                    <Icon className="text-ink-950" size={24} strokeWidth={2} />
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-silk-ribbon shadow-glow transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3">
+                      <Icon className="text-ink-950" size={24} strokeWidth={2} />
+                    </div>
+                    <h3 className="font-display text-xl font-semibold text-fg">
+                      {item.title}
+                    </h3>
                   </div>
-                  <h3 className="font-display text-xl font-semibold text-silk-cream">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-white/55">
+                  <p className="mt-4 text-sm leading-relaxed text-fg/55">
                     {item.desc}
                   </p>
                 </GlassCard>

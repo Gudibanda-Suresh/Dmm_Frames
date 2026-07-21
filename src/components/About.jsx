@@ -27,7 +27,7 @@ export default function About() {
                 src={aboutMain}
                 alt="Behind the scenes with dmm_frames"
                 aspect="auto"
-                className="rounded-[2rem] border border-white/10 shadow-glass"
+                className="rounded-[2rem] border border-fg/10 shadow-glass"
               />
               <GlassCard
                 hover={false}
@@ -51,10 +51,10 @@ export default function About() {
             />
             <div className="-mt-8 space-y-5">
               <Reveal>
-                <p className="text-white/65">{t('about.body1')}</p>
+                <p className="text-fg/65">{t('about.body1')}</p>
               </Reveal>
               <Reveal delay={0.08}>
-                <p className="text-white/65">{t('about.body2')}</p>
+                <p className="text-fg/65">{t('about.body2')}</p>
               </Reveal>
             </div>
           </div>

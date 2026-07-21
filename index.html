@@ -5,6 +5,15 @@
     <link rel="icon" type="image/jpeg" href="/favicon.jpeg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#07070a" />
+    <script>
+      // Set the theme before first paint so returning light-mode visitors
+      // never see a flash of the dark default.
+      try {
+        if (localStorage.getItem('dmm_frames_theme') === 'light') {
+          document.documentElement.dataset.theme = 'light'
+        }
+      } catch {}
+    </script>
 
     <title>dmm_frames — Silk City Photography | Dharmavaram</title>
     <meta
@@ -30,7 +39,7 @@
       rel="stylesheet"
     />
   </head>
-  <body class="bg-ink-950 text-silk-cream antialiased">
+  <body class="bg-canvas text-fg antialiased">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

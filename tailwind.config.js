@@ -9,6 +9,8 @@ export default {
         sans: ['Inter', '"Noto Sans Telugu"', 'system-ui', 'sans-serif'],
       },
       colors: {
+        // Static tones — do not flip with theme (used for text sitting on
+        // photos/gradients where contrast must stay constant either way).
         ink: {
           950: '#07070a',
           900: '#0b0b0f',
@@ -22,6 +24,12 @@ export default {
           crimson: '#C22B45',
           cream: '#F4EFE6',
         },
+        // Theme-aware tones — backed by CSS custom properties that flip
+        // value in [data-theme="light"] (see src/index.css). Every one
+        // supports Tailwind's opacity modifier, e.g. text-fg/60.
+        canvas: 'rgb(var(--canvas) / <alpha-value>)',
+        'canvas-raised': 'rgb(var(--canvas-raised) / <alpha-value>)',
+        fg: 'rgb(var(--fg) / <alpha-value>)',
       },
       backgroundImage: {
         'silk-ribbon':

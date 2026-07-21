@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
-import { Film, Home, Images, Mail } from 'lucide-react'
+import { Briefcase, Film, Home, Images, Mail } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 
 const TABS = [
   { key: 'home', href: '#home', icon: Home },
+  { key: 'services', href: '#services', icon: Briefcase },
   { key: 'gallery', href: '#gallery', icon: Images },
   { key: 'reels', href: '#reels', icon: Film },
   { key: 'contact', href: '#contact', icon: Mail },
@@ -33,7 +34,7 @@ export default function MobileTabBar() {
 
   return (
     <nav
-      className="fixed inset-x-0 bottom-0 z-50 border-t border-white/10 bg-ink-950/85 backdrop-blur-xl lg:hidden"
+      className="fixed inset-x-0 bottom-0 z-50 border-t border-fg/10 bg-canvas/85 backdrop-blur-xl lg:hidden"
       style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
       aria-label="Primary"
     >
@@ -53,11 +54,11 @@ export default function MobileTabBar() {
               >
                 <Icon
                   size={18}
-                  className={isActive ? 'text-ink-950' : 'text-white/55'}
+                  className={isActive ? 'text-ink-950' : 'text-fg/55'}
                   strokeWidth={isActive ? 2.25 : 2}
                 />
               </span>
-              <span className={isActive ? 'text-silk-gold' : 'text-white/45'}>
+              <span className={isActive ? 'text-silk-gold' : 'text-fg/45'}>
                 {t(`nav.${key}`)}
               </span>
             </a>

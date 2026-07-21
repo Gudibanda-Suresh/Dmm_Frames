@@ -87,7 +87,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.9, duration: 0.6 }}
-        className="mx-auto hidden w-fit flex-col items-center gap-2 py-6 text-[11px] font-medium uppercase tracking-[0.25em] text-white/40 lg:flex"
+        className="mx-auto hidden w-fit flex-col items-center gap-2 py-6 text-[11px] font-medium uppercase tracking-[0.25em] text-fg/40 lg:flex"
       >
         {t('hero.scroll')}
         <motion.span

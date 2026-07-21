@@ -6,7 +6,7 @@ import SectionHeading from './ui/SectionHeading'
 import Reveal from './ui/Reveal'
 import LazyImage from './ui/LazyImage'
 import Lightbox from './Lightbox'
-import { categories, galleryItems } from '../data/gallery'
+import { categories, categoryLabel, galleryItems } from '../data/gallery'
 
 const ASPECT_MAP = {
   tall: 'aspect-[3/4]',
@@ -45,10 +45,12 @@ export default function Gallery() {
               className={`rounded-full border px-5 py-2 text-sm font-medium transition-all duration-300 ${
                 active === cat
                   ? 'border-transparent bg-silk-ribbon text-ink-950 shadow-glow'
-                  : 'border-white/10 bg-white/[0.03] text-white/60 hover:border-white/25 hover:text-white'
+                  : 'border-fg/10 bg-fg/[0.03] text-fg/60 hover:border-fg/25 hover:text-fg'
               }`}
             >
-              {t(`gallery.categories.${cat}`)}
+              {cat === 'all'
+                ? t('gallery.categories.all')
+                : t(`gallery.categories.${cat}`, { defaultValue: categoryLabel(cat) })}
             </button>
           ))}
         </Reveal>
@@ -66,7 +68,7 @@ export default function Gallery() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: (i % 6) * 0.05 }}
               onClick={() => setLightboxIndex(filtered.indexOf(item))}
-              className="group relative block w-full break-inside-avoid overflow-hidden rounded-2xl border border-white/10 text-left"
+              className="group relative block w-full break-inside-avoid overflow-hidden rounded-2xl border border-fg/10 text-left"
             >
               <LazyImage
                 src={item.src}
@@ -78,7 +80,9 @@ export default function Gallery() {
               <div className="pointer-events-none absolute inset-0 flex items-end bg-gradient-to-t from-ink-950/80 via-ink-950/0 to-ink-950/0 p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                 <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-xs font-medium capitalize text-white backdrop-blur-md">
                   <Expand size={13} />
-                  {t(`gallery.categories.${item.category}`)}
+                  {t(`gallery.categories.${item.category}`, {
+                    defaultValue: categoryLabel(item.category),
+                  })}
                 </span>
               </div>
             </motion.button>

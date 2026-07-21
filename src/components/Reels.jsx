@@ -26,7 +26,7 @@ export default function Reels() {
               <button
                 type="button"
                 onClick={() => setActive(reel)}
-                className="group relative block w-full overflow-hidden rounded-3xl border border-white/10"
+                className="group relative block w-full overflow-hidden rounded-3xl border border-fg/10"
               >
                 <LazyImage
                   src={reel.poster}

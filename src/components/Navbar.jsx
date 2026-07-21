@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import LanguageSwitcher from './LanguageSwitcher'
+import ThemeToggle from './ThemeToggle'
 import logo from '../assets/logo.jpeg'
 
 const NAV_LINKS = [
@@ -32,16 +33,16 @@ export default function Navbar() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div
           className={`glass-panel flex items-center justify-between rounded-2xl px-4 py-2.5 transition-all duration-500 sm:px-6 ${
-            scrolled ? 'shadow-glass' : 'border-white/5 bg-white/[0.02] shadow-none'
+            scrolled ? 'shadow-glass' : 'border-fg/5 bg-fg/[0.02] shadow-none'
           }`}
         >
           <a href="#home" className="flex min-w-0 items-center gap-2 sm:gap-3">
             <img
               src={logo}
               alt="dmm_frames logo"
-              className="h-9 w-9 shrink-0 rounded-lg border border-white/10 object-cover sm:h-11 sm:w-11"
+              className="h-9 w-9 shrink-0 rounded-lg border border-fg/10 object-cover sm:h-11 sm:w-11"
             />
-            <span className="truncate font-display text-base font-semibold tracking-wide text-silk-cream sm:text-lg lg:text-xl">
+            <span className="truncate font-display text-base font-semibold tracking-wide text-fg sm:text-lg lg:text-xl">
               dmm_frames
             </span>
           </a>
@@ -51,21 +52,23 @@ export default function Navbar() {
               <a
                 key={link.key}
                 href={link.href}
-                className="text-sm font-medium text-white/70 transition-colors duration-300 hover:text-silk-gold"
+                className="text-sm font-medium text-fg/70 transition-colors duration-300 hover:text-silk-gold"
               >
                 {t(`nav.${link.key}`)}
               </a>
             ))}
           </nav>
 
-          <div className="hidden items-center gap-4 lg:flex">
+          <div className="hidden items-center gap-3 lg:flex">
+            <ThemeToggle />
             <LanguageSwitcher />
             <a href="#contact" className="btn-primary !px-5 !py-2.5 text-xs">
               {t('nav.cta')}
             </a>
           </div>
 
-          <div className="shrink-0 lg:hidden">
+          <div className="flex shrink-0 items-center gap-1.5 lg:hidden">
+            <ThemeToggle compact />
             <LanguageSwitcher compact />
           </div>
         </div>

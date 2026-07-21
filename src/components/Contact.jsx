@@ -13,6 +13,7 @@ import {
 import SectionHeading from './ui/SectionHeading'
 import Reveal from './ui/Reveal'
 import GlassCard from './ui/GlassCard'
+import { useTheme } from '../hooks/useTheme'
 
 // WhatsApp number is still a placeholder — swap when available.
 const SOCIALS = {
@@ -39,6 +40,7 @@ function WhatsAppIcon(props) {
 
 export default function Contact() {
   const { t } = useTranslation()
+  const { theme } = useTheme()
   const [form, setForm] = useState({ name: '', email: '', message: '' })
   const [submitted, setSubmitted] = useState(false)
   const [submitting, setSubmitting] = useState(false)
@@ -75,7 +77,7 @@ export default function Contact() {
   }
 
   const inputClass =
-    'w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white placeholder:text-white/35 outline-none transition-colors focus:border-silk-gold/60 focus:bg-white/[0.06]'
+    'w-full rounded-xl border border-fg/10 bg-fg/[0.04] px-4 py-3 text-sm text-fg placeholder:text-fg/35 outline-none transition-colors focus:border-silk-gold/60 focus:bg-fg/[0.06]'
 
   return (
     <section id="contact" className="relative scroll-mt-[72px] pt-6 pb-16 sm:pt-8 sm:pb-20">
@@ -92,12 +94,12 @@ export default function Contact() {
               {submitted ? (
                 <div className="flex h-full min-h-[280px] flex-col items-center justify-center gap-4 text-center">
                   <CheckCircle2 className="text-silk-gold" size={44} />
-                  <p className="max-w-xs text-white/70">{t('contact.form.success')}</p>
+                  <p className="max-w-xs text-fg/70">{t('contact.form.success')}</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div>
-                    <label className="mb-2 block text-xs font-medium uppercase tracking-wide text-white/50">
+                    <label className="mb-2 block text-xs font-medium uppercase tracking-wide text-fg/50">
                       {t('contact.form.name')}
                     </label>
                     <input
@@ -110,7 +112,7 @@ export default function Contact() {
                     />
                   </div>
                   <div>
-                    <label className="mb-2 block text-xs font-medium uppercase tracking-wide text-white/50">
+                    <label className="mb-2 block text-xs font-medium uppercase tracking-wide text-fg/50">
                       {t('contact.form.email')}
                     </label>
                     <input
@@ -124,7 +126,7 @@ export default function Contact() {
                     />
                   </div>
                   <div>
-                    <label className="mb-2 block text-xs font-medium uppercase tracking-wide text-white/50">
+                    <label className="mb-2 block text-xs font-medium uppercase tracking-wide text-fg/50">
                       {t('contact.form.message')}
                     </label>
                     <textarea
@@ -138,7 +140,11 @@ export default function Contact() {
                     />
                   </div>
                   {error && (
-                    <div className="flex items-center gap-2 rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-300">
+                    <div
+                      className={`flex items-center gap-2 rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm ${
+                        theme === 'dark' ? 'text-red-300' : 'text-red-600'
+                      }`}
+                    >
                       <AlertCircle size={16} className="shrink-0" />
                       {t('contact.form.error')}
                     </div>
@@ -165,10 +171,10 @@ export default function Contact() {
                       <MapPin size={18} className="text-ink-950" />
                     </span>
                     <div>
-                      <div className="text-xs uppercase tracking-wide text-white/45">
+                      <div className="text-xs uppercase tracking-wide text-fg/45">
                         {t('contact.info.location')}
                       </div>
-                      <div className="text-sm text-white/80">
+                      <div className="text-sm text-fg/80">
                         {t('contact.info.locationValue')}
                       </div>
                     </div>
@@ -178,12 +184,12 @@ export default function Contact() {
                       <Mail size={18} className="text-ink-950" />
                     </span>
                     <div>
-                      <div className="text-xs uppercase tracking-wide text-white/45">
+                      <div className="text-xs uppercase tracking-wide text-fg/45">
                         {t('contact.info.reach')}
                       </div>
                       <a
                         href={`mailto:${SOCIALS.email}`}
-                        className="text-sm text-white/80 hover:text-silk-gold"
+                        className="text-sm text-fg/80 hover:text-silk-gold"
                       >
                         {SOCIALS.email}
                       </a>
@@ -191,13 +197,13 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div className="mt-6 flex gap-3 border-t border-white/10 pt-6">
+                <div className="mt-6 flex gap-3 border-t border-fg/10 pt-6">
                   <a
                     href={SOCIALS.facebook}
                     target="_blank"
                     rel="noreferrer"
                     aria-label="Facebook"
-                    className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition-colors hover:border-silk-gold/50 hover:text-silk-gold"
+                    className="flex h-11 w-11 items-center justify-center rounded-full border border-fg/10 bg-fg/5 text-fg/70 transition-colors hover:border-silk-gold/50 hover:text-silk-gold"
                   >
                     <Facebook size={18} />
                   </a>
@@ -206,7 +212,7 @@ export default function Contact() {
                     target="_blank"
                     rel="noreferrer"
                     aria-label="Instagram"
-                    className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition-colors hover:border-silk-gold/50 hover:text-silk-gold"
+                    className="flex h-11 w-11 items-center justify-center rounded-full border border-fg/10 bg-fg/5 text-fg/70 transition-colors hover:border-silk-gold/50 hover:text-silk-gold"
                   >
                     <Instagram size={18} />
                   </a>
@@ -215,7 +221,7 @@ export default function Contact() {
                     target="_blank"
                     rel="noreferrer"
                     aria-label="YouTube"
-                    className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition-colors hover:border-silk-gold/50 hover:text-silk-gold"
+                    className="flex h-11 w-11 items-center justify-center rounded-full border border-fg/10 bg-fg/5 text-fg/70 transition-colors hover:border-silk-gold/50 hover:text-silk-gold"
                   >
                     <Youtube size={18} />
                   </a>
@@ -224,7 +230,7 @@ export default function Contact() {
                     target="_blank"
                     rel="noreferrer"
                     aria-label="WhatsApp"
-                    className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition-colors hover:border-silk-gold/50 hover:text-silk-gold"
+                    className="flex h-11 w-11 items-center justify-center rounded-full border border-fg/10 bg-fg/5 text-fg/70 transition-colors hover:border-silk-gold/50 hover:text-silk-gold"
                   >
                     <WhatsAppIcon className="h-[18px] w-[18px]" />
                   </a>
@@ -239,7 +245,9 @@ export default function Contact() {
                   src={MAP_EMBED_SRC}
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  className="h-full min-h-[200px] w-full rounded-2xl border-0 grayscale invert-[0.92] contrast-[1.1]"
+                  className={`h-full min-h-[200px] w-full rounded-2xl border-0 ${
+                    theme === 'dark' ? 'grayscale invert-[0.92] contrast-[1.1]' : ''
+                  }`}
                 />
               </GlassCard>
             </Reveal>
