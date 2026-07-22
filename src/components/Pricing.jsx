@@ -11,7 +11,7 @@ export default function Pricing() {
   const items = t('pricing.items', { returnObjects: true })
 
   return (
-    <section id="pricing" className="relative scroll-mt-[72px] pt-6 pb-16 sm:pt-8 sm:pb-20">
+    <section id="pricing" className="relative scroll-mt-[72px] pt-4 pb-10 sm:pt-6 sm:pb-14">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow={t('pricing.eyebrow')}
@@ -63,7 +63,7 @@ export default function Pricing() {
         </div>
 
         <Reveal delay={0.2}>
-          <div className="mt-8 space-y-1.5 text-center">
+          <div className="mt-5 space-y-1 text-center">
             <p className="text-xs text-fg/45">{t('pricing.note')}</p>
             <p className="text-xs italic text-fg/35">{t('pricing.terms')}</p>
           </div>

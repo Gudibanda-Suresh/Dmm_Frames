@@ -80,7 +80,7 @@ export default function Contact() {
     'w-full rounded-xl border border-fg/10 bg-fg/[0.04] px-4 py-3 text-sm text-fg placeholder:text-fg/35 outline-none transition-colors focus:border-silk-gold/60 focus:bg-fg/[0.06]'
 
   return (
-    <section id="contact" className="relative scroll-mt-[72px] pt-6 pb-16 sm:pt-8 sm:pb-20">
+    <section id="contact" className="relative scroll-mt-[72px] pt-4 pb-10 sm:pt-6 sm:pb-14">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow={t('contact.eyebrow')}
