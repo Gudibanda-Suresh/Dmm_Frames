@@ -49,7 +49,7 @@ export default function MobileTabBar() {
             >
               <span
                 className={`flex h-8 w-8 items-center justify-center rounded-full transition-all duration-300 ${
-                  isActive ? 'bg-silk-ribbon shadow-glow' : ''
+                  isActive ? 'bg-gold-ribbon shadow-glow' : ''
                 }`}
               >
                 <Icon

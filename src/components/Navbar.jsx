@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Heart, IndianRupee } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import LanguageSwitcher from './LanguageSwitcher'
 import ThemeToggle from './ThemeToggle'
@@ -8,8 +9,10 @@ const NAV_LINKS = [
   { key: 'home', href: '#home' },
   { key: 'about', href: '#about' },
   { key: 'services', href: '#services' },
+  { key: 'pricing', href: '#pricing' },
   { key: 'gallery', href: '#gallery' },
   { key: 'reels', href: '#reels' },
+  { key: 'testimonials', href: '#testimonials' },
   { key: 'contact', href: '#contact' },
 ]
 
@@ -36,18 +39,18 @@ export default function Navbar() {
             scrolled ? 'shadow-glass' : 'border-fg/5 bg-fg/[0.02] shadow-none'
           }`}
         >
-          <a href="#home" className="flex min-w-0 items-center gap-2 sm:gap-3">
+          <a href="#home" className="flex min-w-0 items-center gap-1.5 sm:gap-3">
             <img
               src={logo}
               alt="dmm_frames logo"
-              className="h-9 w-9 shrink-0 rounded-lg border border-fg/10 object-cover sm:h-11 sm:w-11"
+              className="h-8 w-8 shrink-0 rounded-lg border border-fg/10 object-cover sm:h-11 sm:w-11"
             />
-            <span className="truncate font-display text-base font-semibold tracking-wide text-fg sm:text-lg lg:text-xl">
+            <span className="truncate font-display text-sm font-semibold tracking-wide text-fg sm:text-lg lg:text-xl">
               dmm_frames
             </span>
           </a>
 
-          <nav className="hidden items-center gap-8 lg:flex">
+          <nav className="hidden items-center gap-5 xl:gap-7 lg:flex">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.key}
@@ -59,15 +62,29 @@ export default function Navbar() {
             ))}
           </nav>
 
-          <div className="hidden items-center gap-3 lg:flex">
+          <div className="hidden items-center gap-2 lg:flex">
             <ThemeToggle />
             <LanguageSwitcher />
-            <a href="#contact" className="btn-primary !px-5 !py-2.5 text-xs">
+            <a href="#contact" className="btn-primary !px-5 !py-2.5 text-xs whitespace-nowrap">
               {t('nav.cta')}
             </a>
           </div>
 
-          <div className="flex shrink-0 items-center gap-1.5 lg:hidden">
+          <div className="flex shrink-0 items-center gap-1 lg:hidden">
+            <a
+              href="#pricing"
+              aria-label="Pricing"
+              className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-fg/10 bg-fg/5 text-fg/70 transition-colors hover:text-silk-gold"
+            >
+              <IndianRupee size={14} />
+            </a>
+            <a
+              href="#testimonials"
+              aria-label="Reviews"
+              className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-fg/10 bg-fg/5 text-fg/70 transition-colors hover:text-silk-gold"
+            >
+              <Heart size={14} />
+            </a>
             <ThemeToggle compact />
             <LanguageSwitcher compact />
           </div>

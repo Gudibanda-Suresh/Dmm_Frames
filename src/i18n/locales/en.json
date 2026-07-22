@@ -3,8 +3,10 @@
     "home": "Home",
     "about": "About",
     "services": "Services",
+    "pricing": "Pricing",
     "gallery": "Gallery",
     "reels": "Reels",
+    "testimonials": "Reviews",
     "contact": "Contact",
     "cta": "Book a Shoot"
   },
@@ -51,6 +53,19 @@
       }
     ]
   },
+  "pricing": {
+    "eyebrow": "Pricing",
+    "title": "Simple, Honest Pricing",
+    "subtitle": "Clear rates, no hidden costs — pick what you need.",
+    "offerBadge": "Free Registration",
+    "offerText": "Free registration is open till November! Book now — plans start from just ₹299.",
+    "items": [
+      { "name": "Instagram Reel", "price": "₹100", "unit": "per reel" },
+      { "name": "YouTube Shot", "price": "₹100", "unit": "per shot" },
+      { "name": "Camera on Lease", "price": "₹250", "unit": "per hour" }
+    ],
+    "note": "Prices may vary based on location and requirements. Contact us for custom packages."
+  },
   "gallery": {
     "eyebrow": "Portfolio",
     "title": "Gallery",
@@ -69,6 +84,11 @@
     "eyebrow": "In Motion",
     "title": "Reels & Videos",
     "subtitle": "Cinematic stories told frame by frame."
+  },
+  "testimonials": {
+    "eyebrow": "Client Love",
+    "title": "What Our Clients Say",
+    "subtitle": "Real words from the people whose stories we've captured."
   },
   "contact": {
     "eyebrow": "Get in Touch",

@@ -25,7 +25,7 @@ export default function LanguageSwitcher({ className = '', compact = false }) {
             compact ? 'px-2 py-1 text-[11px]' : 'px-3 py-1.5 text-xs'
           } ${
             current === code
-              ? 'bg-silk-ribbon text-ink-950 shadow-glow'
+              ? 'bg-gold-ribbon text-ink-950 shadow-glow'
               : 'text-fg/60 hover:text-fg'
           }`}
         >

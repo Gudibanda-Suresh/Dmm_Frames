@@ -2,8 +2,10 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
 import Services from './components/Services'
+import Pricing from './components/Pricing'
 import Gallery from './components/Gallery'
 import Reels from './components/Reels'
+import Testimonials from './components/Testimonials'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import MobileTabBar from './components/MobileTabBar'
@@ -18,8 +20,10 @@ export default function App() {
           <Hero />
           <About />
           <Services />
+          <Pricing />
           <Gallery />
           <Reels />
+          <Testimonials />
           <Contact />
         </main>
         <Footer />

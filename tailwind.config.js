@@ -32,8 +32,12 @@ export default {
         fg: 'rgb(var(--fg) / <alpha-value>)',
       },
       backgroundImage: {
+        // Used only for the decorative Hero headline text now — buttons,
+        // pills, and icon badges use gold-ribbon instead.
         'silk-ribbon':
           'linear-gradient(115deg, #3E7CB1 0%, #E0A93B 45%, #C22B45 100%)',
+        'gold-ribbon':
+          'linear-gradient(115deg, #F3CC7A 0%, #E0A93B 55%, #B8801F 100%)',
         'radial-fade':
           'radial-gradient(60% 60% at 50% 0%, rgba(62,124,177,0.18) 0%, rgba(7,7,10,0) 70%)',
       },

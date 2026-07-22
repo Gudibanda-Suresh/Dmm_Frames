@@ -4,8 +4,8 @@ import { useTheme } from '../hooks/useTheme'
 export default function ThemeToggle({ compact = false }) {
   const { theme, toggleTheme } = useTheme()
   const isLight = theme === 'light'
-  const size = compact ? 'h-9 w-9' : 'h-11 w-11'
-  const iconSize = compact ? 15 : 17
+  const size = compact ? 'h-8 w-8' : 'h-11 w-11'
+  const iconSize = compact ? 14 : 17
 
   return (
     <button

@@ -167,7 +167,7 @@ export default function Contact() {
               <GlassCard hover={false} className="rounded-3xl p-6 sm:p-8">
                 <div className="flex flex-wrap gap-4 sm:gap-6">
                   <div className="flex items-start gap-3">
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-silk-ribbon">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gold-ribbon">
                       <MapPin size={18} className="text-ink-950" />
                     </span>
                     <div>
@@ -180,7 +180,7 @@ export default function Contact() {
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-silk-ribbon">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gold-ribbon">
                       <Mail size={18} className="text-ink-950" />
                     </span>
                     <div>

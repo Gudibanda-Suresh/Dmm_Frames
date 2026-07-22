@@ -46,7 +46,7 @@ body {
   background: rgb(var(--canvas));
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #3e7cb1, #c22b45);
+  background: linear-gradient(180deg, #f3cc7a, #b8801f);
   border-radius: 999px;
 }
 
@@ -77,7 +77,7 @@ body {
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-full bg-silk-ribbon px-7 py-3 text-sm font-semibold text-ink-950 shadow-glow transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98];
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-gold-ribbon px-7 py-3 text-sm font-semibold text-ink-950 shadow-glow transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98];
   }
 
   /* Static (not theme-aware): only used on the Hero photo, where the dark

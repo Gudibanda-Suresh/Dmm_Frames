@@ -8,12 +8,6 @@ import LazyImage from './ui/LazyImage'
 import Lightbox from './Lightbox'
 import { categories, categoryLabel, galleryItems } from '../data/gallery'
 
-const ASPECT_MAP = {
-  tall: 'aspect-[3/4]',
-  med: 'aspect-[4/5]',
-  short: 'aspect-[1/1]',
-}
-
 export default function Gallery() {
   const { t } = useTranslation()
   const [active, setActive] = useState('all')
@@ -44,7 +38,7 @@ export default function Gallery() {
               onClick={() => setActive(cat)}
               className={`rounded-full border px-5 py-2 text-sm font-medium transition-all duration-300 ${
                 active === cat
-                  ? 'border-transparent bg-silk-ribbon text-ink-950 shadow-glow'
+                  ? 'border-transparent bg-gold-ribbon text-ink-950 shadow-glow'
                   : 'border-fg/10 bg-fg/[0.03] text-fg/60 hover:border-fg/25 hover:text-fg'
               }`}
             >
@@ -73,7 +67,7 @@ export default function Gallery() {
               <LazyImage
                 src={item.src}
                 alt={`${item.category} photography by dmm_frames`}
-                aspect={item.h ? ASPECT_MAP[item.h] : 'auto'}
+                aspect="auto"
                 className="rounded-2xl"
                 imgClassName="transition-transform duration-700 group-hover:scale-110"
               />

@@ -27,7 +27,7 @@ export default function Services() {
               <Reveal key={item.title} delay={0.08 * i}>
                 <GlassCard className="group h-full rounded-3xl p-7">
                   <div className="flex items-center gap-4">
-                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-silk-ribbon shadow-glow transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3">
+                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gold-ribbon shadow-glow transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3">
                       <Icon className="text-ink-950" size={24} strokeWidth={2} />
                     </div>
                     <h3 className="font-display text-xl font-semibold text-fg">

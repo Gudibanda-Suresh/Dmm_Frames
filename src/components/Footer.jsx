@@ -5,8 +5,10 @@ const NAV_LINKS = [
   { key: 'home', href: '#home' },
   { key: 'about', href: '#about' },
   { key: 'services', href: '#services' },
+  { key: 'pricing', href: '#pricing' },
   { key: 'gallery', href: '#gallery' },
   { key: 'reels', href: '#reels' },
+  { key: 'testimonials', href: '#testimonials' },
   { key: 'contact', href: '#contact' },
 ]
 

@@ -11,8 +11,8 @@ const aboutModules = import.meta.glob('../assets/about/*.{jpg,jpeg,png,webp,avif
   eager: true,
   import: 'default',
 })
-const aboutMain = pickNthLocalImage(aboutModules, 0, 'https://picsum.photos/seed/dmm-about-main/900/1000')
-const aboutAccent = pickNthLocalImage(aboutModules, 1, 'https://picsum.photos/seed/dmm-about-accent/500/500')
+const aboutMain = pickNthLocalImage(aboutModules, 0, null)
+const aboutAccent = pickNthLocalImage(aboutModules, 1, null)
 
 export default function About() {
   const { t } = useTranslation()
@@ -21,27 +21,31 @@ export default function About() {
     <section id="about" className="relative scroll-mt-[72px] pt-6 pb-16 sm:pt-8 sm:pb-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-14 lg:grid-cols-2 lg:items-center lg:gap-16">
-          <Reveal>
-            <div className="relative">
-              <LazyImage
-                src={aboutMain}
-                alt="Behind the scenes with dmm_frames"
-                aspect="auto"
-                className="rounded-[2rem] border border-fg/10 shadow-glass"
-              />
-              <GlassCard
-                hover={false}
-                className="absolute -bottom-8 -right-4 w-44 rounded-2xl p-3 sm:-right-8 sm:w-56"
-              >
+          {aboutMain && (
+            <Reveal>
+              <div className="relative">
                 <LazyImage
-                  src={aboutAccent}
-                  alt="Silk weaving detail, Dharmavaram"
+                  src={aboutMain}
+                  alt="Behind the scenes with dmm_frames"
                   aspect="auto"
-                  className="rounded-xl"
+                  className="rounded-[2rem] border border-fg/10 shadow-glass"
                 />
-              </GlassCard>
-            </div>
-          </Reveal>
+                {aboutAccent && (
+                  <GlassCard
+                    hover={false}
+                    className="absolute -bottom-8 -right-4 w-44 rounded-2xl p-3 sm:-right-8 sm:w-56"
+                  >
+                    <LazyImage
+                      src={aboutAccent}
+                      alt="Silk weaving detail, Dharmavaram"
+                      aspect="auto"
+                      className="rounded-xl"
+                    />
+                  </GlassCard>
+                )}
+              </div>
+            </Reveal>
+          )}
 
           <div>
             <SectionHeading
