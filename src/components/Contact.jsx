@@ -7,8 +7,8 @@ import {
   Instagram,
   Mail,
   MapPin,
+  Play,
   Send,
-  Youtube,
 } from 'lucide-react'
 import SectionHeading from './ui/SectionHeading'
 import Reveal from './ui/Reveal'
@@ -197,42 +197,42 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div className="mt-6 flex gap-3 border-t border-fg/10 pt-6">
+                <div className="mt-6 flex gap-2.5 border-t border-fg/10 pt-6">
                   <a
                     href={SOCIALS.facebook}
                     target="_blank"
                     rel="noreferrer"
                     aria-label="Facebook"
-                    className="flex h-11 w-11 items-center justify-center rounded-full border border-fg/10 bg-fg/5 text-fg/70 transition-colors hover:border-silk-gold/50 hover:text-silk-gold"
+                    className="flex h-9 w-9 items-center justify-center rounded-full bg-[#1877F2] text-white shadow-sm transition-transform duration-300 hover:scale-110"
                   >
-                    <Facebook size={18} />
+                    <Facebook size={15} fill="currentColor" strokeWidth={0} />
                   </a>
                   <a
                     href={SOCIALS.instagram}
                     target="_blank"
                     rel="noreferrer"
                     aria-label="Instagram"
-                    className="flex h-11 w-11 items-center justify-center rounded-full border border-fg/10 bg-fg/5 text-fg/70 transition-colors hover:border-silk-gold/50 hover:text-silk-gold"
+                    className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-[#F58529] via-[#DD2A7B] to-[#8134AF] text-white shadow-sm transition-transform duration-300 hover:scale-110"
                   >
-                    <Instagram size={18} />
+                    <Instagram size={15} />
                   </a>
                   <a
                     href={SOCIALS.youtube}
                     target="_blank"
                     rel="noreferrer"
                     aria-label="YouTube"
-                    className="flex h-11 w-11 items-center justify-center rounded-full border border-fg/10 bg-fg/5 text-fg/70 transition-colors hover:border-silk-gold/50 hover:text-silk-gold"
+                    className="flex h-9 w-9 items-center justify-center rounded-full bg-[#FF0000] text-white shadow-sm transition-transform duration-300 hover:scale-110"
                   >
-                    <Youtube size={18} />
+                    <Play size={14} fill="currentColor" strokeWidth={0} className="ml-0.5" />
                   </a>
                   <a
                     href={SOCIALS.whatsapp}
                     target="_blank"
                     rel="noreferrer"
                     aria-label="WhatsApp"
-                    className="flex h-11 w-11 items-center justify-center rounded-full border border-fg/10 bg-fg/5 text-fg/70 transition-colors hover:border-silk-gold/50 hover:text-silk-gold"
+                    className="flex h-9 w-9 items-center justify-center rounded-full bg-[#25D366] text-white shadow-sm transition-transform duration-300 hover:scale-110"
                   >
-                    <WhatsAppIcon className="h-[18px] w-[18px]" />
+                    <WhatsAppIcon className="h-[15px] w-[15px]" />
                   </a>
                 </div>
               </GlassCard>

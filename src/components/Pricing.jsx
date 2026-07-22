@@ -63,7 +63,10 @@ export default function Pricing() {
         </div>
 
         <Reveal delay={0.2}>
-          <p className="mt-8 text-center text-xs text-fg/45">{t('pricing.note')}</p>
+          <div className="mt-8 space-y-1.5 text-center">
+            <p className="text-xs text-fg/45">{t('pricing.note')}</p>
+            <p className="text-xs italic text-fg/35">{t('pricing.terms')}</p>
+          </div>
         </Reveal>
       </div>
     </section>

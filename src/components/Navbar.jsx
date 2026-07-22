@@ -33,9 +33,9 @@ export default function Navbar() {
         scrolled ? 'py-2' : 'py-4'
       }`}
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-0 sm:px-6 lg:px-8">
         <div
-          className={`glass-panel flex items-center justify-between rounded-2xl px-4 py-2.5 transition-all duration-500 sm:px-6 ${
+          className={`glass-panel flex items-center justify-between rounded-none px-4 py-2.5 transition-all duration-500 sm:rounded-2xl sm:px-6 ${
             scrolled ? 'shadow-glass' : 'border-fg/5 bg-fg/[0.02] shadow-none'
           }`}
         >
@@ -43,7 +43,7 @@ export default function Navbar() {
             <img
               src={logo}
               alt="dmm_frames logo"
-              className="h-8 w-8 shrink-0 rounded-lg border border-fg/10 object-cover sm:h-11 sm:w-11"
+              className="h-12 w-12 shrink-0 rounded-lg border border-fg/10 object-cover sm:h-14 sm:w-14"
             />
             <span className="truncate font-display text-sm font-semibold tracking-wide text-fg sm:text-lg lg:text-xl">
               dmm_frames
