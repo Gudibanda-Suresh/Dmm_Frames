@@ -3,10 +3,10 @@
 export const testimonials = [
   {
     name: 'Sowmya Reddy',
-    role: 'Wedding Client, Dharmavaram',
+    role: 'Birthday Client, Dharmavaram',
     rating: 5,
     quote:
-      "dmm_frames captured our wedding exactly the way it felt — warm, joyful, and full of life. We still get emotional watching the reel they made for us.",
+      "dmm_frames captured our Birthday exactly the way it felt — warm, joyful, and full of life. We still get emotional watching the reel they made for us.",
   },
   {
     name: 'Karthik Naidu',
@@ -17,7 +17,7 @@ export const testimonials = [
   },
   {
     name: 'Divya & Ravi',
-    role: 'Pre-Wedding Shoot, Hampi',
+    role: 'Pre-Wedding Shoot, Dharmavaram',
     rating: 5,
     quote:
       'Best decision we made for our pre-wedding shoot. The photos looked like something out of a movie. Highly recommend dmm_frames!',

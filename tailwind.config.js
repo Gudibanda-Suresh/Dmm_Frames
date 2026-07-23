@@ -58,10 +58,15 @@ export default {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-10px)' },
         },
+        marqueeltr: {
+          '0%': { transform: 'translateX(-50%)' },
+          '100%': { transform: 'translateX(0%)' },
+        },
       },
       animation: {
         shimmer: 'shimmer 1.6s linear infinite',
         float: 'float 6s ease-in-out infinite',
+        marqueeltr: 'marqueeltr 36s linear infinite',
       },
     },
   },
