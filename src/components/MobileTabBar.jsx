@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
-import { Briefcase, Film, Home, Images, Mail } from 'lucide-react'
+import { Briefcase, Home, Images, IndianRupee, Mail } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 
 const TABS = [
   { key: 'home', href: '#home', icon: Home },
   { key: 'services', href: '#services', icon: Briefcase },
   { key: 'gallery', href: '#gallery', icon: Images },
-  { key: 'reels', href: '#reels', icon: Film },
+  { key: 'pricing', href: '#pricing', icon: IndianRupee },
   { key: 'contact', href: '#contact', icon: Mail },
 ]
 

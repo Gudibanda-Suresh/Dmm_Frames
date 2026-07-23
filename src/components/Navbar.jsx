@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Heart, IndianRupee } from 'lucide-react'
+import { Film, Heart } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import LanguageSwitcher from './LanguageSwitcher'
 import ThemeToggle from './ThemeToggle'
@@ -72,11 +72,11 @@ export default function Navbar() {
 
           <div className="flex shrink-0 items-center gap-1 lg:hidden">
             <a
-              href="#pricing"
-              aria-label="Pricing"
+              href="#reels"
+              aria-label="Reels"
               className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-fg/10 bg-fg/5 text-fg/70 transition-colors hover:text-silk-gold"
             >
-              <IndianRupee size={14} />
+              <Film size={14} />
             </a>
             <a
               href="#testimonials"

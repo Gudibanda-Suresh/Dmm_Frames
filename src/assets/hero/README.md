@@ -1,6 +1,8 @@
-Drop your hero photos here, named exactly:
+Drop a photo in here with any filename (e.g. `sunset.jpg`).
 
-- `main.jpg` (or .png/.jpeg/.webp) — the large hero portrait
-- `accent.jpg` — the small floating accent photo
+The **first file alphabetically** is used as the full-bleed hero background,
+shown at its natural size (uncropped). If there are several files, only the
+first one (by filename) is used — move extras elsewhere or rename to control
+which one wins.
 
-They replace the placeholder images automatically on next save/build — no code changes needed.
+No code changes needed — picked up automatically on next save/build.
