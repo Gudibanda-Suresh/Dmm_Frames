@@ -18,7 +18,7 @@ export default function SectionHeading({
         </span>
       </Reveal>
       <Reveal delay={0.08}>
-        <h2 className="font-display text-4xl font-semibold leading-tight text-fg sm:text-5xl md:text-6xl">
+        <h2 className="font-display text-3xl font-semibold leading-tight text-fg sm:text-4xl md:text-5xl">
           {title}
         </h2>
       </Reveal>

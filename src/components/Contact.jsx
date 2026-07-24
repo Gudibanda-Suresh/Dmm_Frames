@@ -13,30 +13,15 @@ import {
 import SectionHeading from './ui/SectionHeading'
 import Reveal from './ui/Reveal'
 import GlassCard from './ui/GlassCard'
+import WhatsAppIcon from './icons/WhatsAppIcon'
+import TelegramIcon from './icons/TelegramIcon'
 import { useTheme } from '../hooks/useTheme'
-
-// WhatsApp number is still a placeholder — swap when available.
-const SOCIALS = {
-  facebook: 'https://www.facebook.com/profile.php?id=61591771426900',
-  instagram: 'https://www.instagram.com/dmm_frames?utm_source=qr&igsh=a3FzN3doejFrM3g5',
-  youtube: 'https://www.youtube.com/@dmm_frames',
-  whatsapp: 'https://wa.me/919000000000',
-  email: 'dmmframes@gmail.com',
-}
+import { SOCIALS } from '../config'
 
 const WEB3FORMS_ACCESS_KEY = '37559591-ed93-4cd0-9ae5-0f4b3a6723ed'
 
 const MAP_EMBED_SRC =
   'https://www.google.com/maps?q=Dharmavaram,Andhra+Pradesh,India&output=embed'
-
-function WhatsAppIcon(props) {
-  return (
-    <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.148-.67.15-.198.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
-      <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.51 3.63 1.4 5.14L2 22l5.09-1.5a9.85 9.85 0 0 0 4.95 1.33c5.46 0 9.91-4.45 9.91-9.92C21.95 6.45 17.5 2 12.04 2zm0 18.05c-1.65 0-3.19-.46-4.5-1.26l-.32-.19-3.02.89.9-2.95-.21-.31a8.05 8.05 0 0 1-1.26-4.32c0-4.46 3.63-8.09 8.11-8.09 4.47 0 8.1 3.63 8.1 8.09 0 4.47-3.63 8.14-8.1 8.14z" />
-    </svg>
-  )
-}
 
 export default function Contact() {
   const { t } = useTranslation()
@@ -233,6 +218,15 @@ export default function Contact() {
                     className="flex h-9 w-9 items-center justify-center rounded-full bg-[#25D366] text-white shadow-sm transition-transform duration-300 hover:scale-110"
                   >
                     <WhatsAppIcon className="h-[15px] w-[15px]" />
+                  </a>
+                  <a
+                    href={SOCIALS.telegram}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Telegram"
+                    className="flex h-9 w-9 items-center justify-center rounded-full bg-[#26A5E4] text-white shadow-sm transition-transform duration-300 hover:scale-110"
+                  >
+                    <TelegramIcon className="h-[15px] w-[15px]" />
                   </a>
                 </div>
               </GlassCard>

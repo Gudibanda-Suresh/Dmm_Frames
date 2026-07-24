@@ -9,6 +9,7 @@ import Testimonials from './components/Testimonials'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import MobileTabBar from './components/MobileTabBar'
+import FloatingWhatsApp from './components/FloatingWhatsApp'
 import { ThemeProvider } from './hooks/useTheme'
 
 export default function App() {
@@ -28,6 +29,7 @@ export default function App() {
         </main>
         <Footer />
         <MobileTabBar />
+        <FloatingWhatsApp />
       </div>
     </ThemeProvider>
   )
