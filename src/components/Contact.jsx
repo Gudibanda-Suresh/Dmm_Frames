@@ -184,6 +184,13 @@ export default function Contact() {
 
                 <div className="mt-6 flex gap-2.5 border-t border-fg/10 pt-6">
                   <a
+                    href={`mailto:${SOCIALS.email}`}
+                    aria-label="Email"
+                    className="flex h-9 w-9 items-center justify-center rounded-full bg-[#EA4335] text-white shadow-sm transition-transform duration-300 hover:scale-110"
+                  >
+                    <Mail size={15} />
+                  </a>
+                  <a
                     href={SOCIALS.facebook}
                     target="_blank"
                     rel="noreferrer"
